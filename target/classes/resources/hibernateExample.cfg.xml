@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/bookstore</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">toor</property>
+
+        <!-- JDBC connection pool settings -->
+        <!-- We are using 1 connection because of testing purpose  -->
+        <!-- For production purpose we will be using much more -->     
+        <property name="connection.pool_size">1</property>
+
+        <!-- Select our SQL dialect -->
+        <!-- That hibernate can know witch database we use -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo the SQL to stdout -->
+        <!-- That we can see what happened behind the scenes -->
+        <property name="show_sql">true</property>
+
+		<!-- Set the current session context -->
+		<property name="current_session_context_class">thread</property>
+ 
+    </session-factory>
+
+</hibernate-configuration>
