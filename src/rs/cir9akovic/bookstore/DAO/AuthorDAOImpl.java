@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import rs.cir9akovic.bookstore.entity.Authors;
 
 @Repository
-public class AuthorDAOImpl implements IAuthorDAO {
+public class AuthorDAOImpl implements IAuthorsDAO {
 
 	// Inject the session factory
 	@Autowired
@@ -27,7 +27,7 @@ public class AuthorDAOImpl implements IAuthorDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// Create query
-		Query<Authors> theQuery = currentSession.createQuery("from Authors order by lastName", Authors.class);
+		Query<Authors> theQuery = currentSession.createQuery("from Authors", Authors.class);
 		
 		// Execute query and get result list
 		List<Authors> authors = theQuery.getResultList();

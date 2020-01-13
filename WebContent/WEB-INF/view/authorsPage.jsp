@@ -16,6 +16,7 @@
 			<h2> List Of All Authors </h2>
 		</div>
 	</div>
+	<button onclick="window.location.href='home'" class="button">Back to HomePage</button>
 	<button onclick="window.location.href='addAuthor'" class="button">Add New Author</button>
 	<br></br>
 	<div id="container">

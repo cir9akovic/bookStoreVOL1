@@ -74,7 +74,7 @@ public class Geners {
 			
 			books.add(book);
 			
-			book.setGener(this);
+			book.setGenre(this);
 			
 		}else {
 			

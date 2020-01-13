@@ -15,7 +15,7 @@
 				<h2>Modify Author</h2>
 			</div>
 			<div id="container">
-				<form:form action="saveAuthor" modelAttribute="author" method="POST">
+				<form:form action="saveOrUpdateAuthor" modelAttribute="author" method="POST">
 					<table>
 						<tbody>
 							
@@ -46,7 +46,10 @@
 							</tr>
 							<tr>
 								<td><label>Gender:</label></td>
-								<td><form:input path="gender" /></td>
+								<td><form:select path="gender">
+									<form:option value="Male"> Male </form:option>
+									<form:option value="Female"> Female </form:option>
+								</form:select></td>
 							</tr>
 							<tr>
 								<td><label></label></td>

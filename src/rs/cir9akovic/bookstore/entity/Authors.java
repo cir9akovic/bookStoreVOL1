@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -23,23 +24,30 @@ public class Authors {
 	@Column(name="id")
 	private int id;
 	
+	@NotEmpty(message = "is required!")
 	@Column(name="firstName")
 	private String firstName;
 	
+	@NotEmpty(message = "is required!")
 	@Column(name="lastName")
 	private String lastName;
 	
+	@NotEmpty(message = "is required!")
 	@Column(name="dob")
 	@DateTimeFormat(pattern = "yyyy-MM-dd") // For formating to date field in database
+	// @Past good but not support String 
 	private String dob;
 	
 	@Column(name="dod")
 	@DateTimeFormat(pattern = "yyyy-MM-dd") // For formating to date field in database
+	// @PastOrPresent good but not support String 
 	private String dod;
 	
+	@NotEmpty(message = "is required!")
 	@Column(name="country")
 	private String country;
 	
+	@NotEmpty(message = "is required!")
 	@Column(name="gender")
 	private String gender;
 	
